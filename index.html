@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinayaka Services & Products</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #ff7f00, #ff9900);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffe082;
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581579188871-45ea61f2a0c6?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .hero .button {
+      font-size: 20px;
+      padding: 14px 28px;
+    }
+
+    /* Sections */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #ff7f00;
+      margin-bottom: 20px;
+      font-size: 26px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: #ff9900;
+      display: block;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+    p {
+      text-align: center;
+      font-size: 17px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* Services Table */
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    .services-table th, .services-table td {
+      padding: 15px;
+      text-align: center;
+    }
+    .services-table th {
+      background: #ff7f00;
+      color: #fff;
+      font-size: 18px;
+    }
+    .services-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    .services-table tr:hover {
+      background: #fff3e0;
+      transition: 0.3s;
+    }
+
+    /* Buttons */
+    .button {
+      display: inline-block;
+      background: #ff7f00;
+      color: #fff;
+      padding: 12px 24px;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: 0.3s;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    .button:hover {
+      background: #e66a00;
+      transform: scale(1.05);
+    }
+
+    /* Included Services */
+    ul {
+      max-width: 700px;
+      margin: auto;
+      padding-left: 20px;
+      font-size: 18px;
+    }
+    ul li {
+      margin: 10px 0;
+      padding: 10px;
+      background: #fff;
+      border-left: 5px solid #ff7f00;
+      border-radius: 5px;
+      list-style: none;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+    }
+    ul li img {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+    }
+    ul li:hover {
+      background: #fff3e0;
+      transform: translateX(5px);
+    }
+
+    /* Contact Section */
+    #contact p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff7f00;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+    .whatsapp-chat:hover {
+      background: #e66a00;
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #ff7f00;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+      .button {
+        font-size: 16px;
+        padding: 10px 18px;
+      }
+      ul li {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Vinayaka Services & Products</h1>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#services">Services</a>
+      <a href="#included">Included</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Professional Deep Cleaning Services</h1>
+      <p>Homes • Offices • Carpets • Sofas – We Clean It All!</p>
+      <a href="https://wa.me/919902528018?text=I%20want%20to%20book%20a%20cleaning%20service" class="button">📅 Book Now</a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At <b>Vinayaka Services & Products</b>, we bring you professional cleaning solutions 
+      with a personal touch. Our expert team ensures that every corner of your space 
+      shines with hygiene and freshness. Customer trust and satisfaction are our top priorities.
+    </p>
+    <center><img src="https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cleaning Team" style="margin-top:20px; border-radius:10px; max-width:80%;"></center>
+  </section>
+
+  <!-- Why Cleaning is Important -->
+  <section id="why" style="background:#fff3e0;">
+    <h2>Why Cleaning is Important</h2>
+    <p>
+      Cleanliness is more than just looks—it’s about health, safety, and peace of mind.  
+      Our deep cleaning services reduce germs, improve air quality, and create a positive environment 
+      whether at home or in your workplace.
+    </p>
+    <center><img src="https://images.pexels.com/photos/4239147/pexels-photo-4239147.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cleaning Importance" style="margin-top:20px; border-radius:10px; max-width:80%;"></center>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Deep Cleaning Services</h2>
+    <table class="services-table">
+      <tr>
+        <th>Service</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>🏠 Home Deep Cleaning</td>
+        <td>Complete home cleaning: floors, kitchen, bathrooms, and more.</td>
+        <td>₹2500</td>
+      </tr>
+      <tr>
+        <td>🏢 Office Deep Cleaning</td>
+        <td>Professional office cleaning including desks, chairs & floors.</td>
+        <td>₹4000</td>
+      </tr>
+      <tr>
+        <td>🧼 Carpet Shampooing</td>
+        <td>Deep wash & stain removal for carpets.</td>
+        <td>₹1200</td>
+      </tr>
+      <tr>
+        <td>🛋 Sofa Cleaning</td>
+        <td>Foam & vacuum cleaning for fabric or leather sofas.</td>
+        <td>₹800</td>
+      </tr>
+    </table>
+    <center>
+      <a href="https://wa.me/919902528018?text=I%20want%20to%20book%20a%20cleaning%20service" class="button">📅 Book a Service</a>
+    </center>
+  </section>
+
+  <!-- Included Services -->
+  <section id="included" style="background:#fff3e0;">
+    <h2>Services Included in Professional Cleaning</h2>
+    <ul>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="">✔ Floor scrubbing & mopping</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="">✔ Deep cleaning of kitchen & bathrooms</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/869/869636.png" alt="">✔ Window & glass cleaning</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/1046/1046903.png" alt="">✔ Dusting furniture & appliances</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/921/921490.png" alt="">✔ Carpet & sofa shampooing</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="">✔ Sanitization of high-touch areas</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Locations: Bengaluru, Hyderabad</p>
+    <p>📞 Phone: <a href="tel:+919902528018">+91 99025 28018</a></p>
+    <p>✉ Email: info@vinayakaservices.com</p>
+    <center>
+      <a href="tel:+919902528018" class="button">📞 Call Now</a>
+    </center>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919902528018?text=Hello%20Vinayaka%20Services%2C%20I%20have%20a%20query" class="whatsapp-chat">💬 Chat on WhatsApp</a>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vinayaka Services & Products. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
